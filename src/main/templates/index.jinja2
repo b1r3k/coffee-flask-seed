@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wawelowe</title>
+    <base href="/index.html">
+    <meta charset="utf-8">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery{{ lib_version_suffix }}.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular{{ lib_version_suffix }}.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap{{ lib_version_suffix }}.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap{{ lib_version_suffix }}.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome{{ lib_version_suffix }}.css"
+          rel="stylesheet"/>
+
+    {% for style in styles %}
+        <link href="{{ style.path }}" rel="{{ style.rel }}" type="{{ style.type }}"/>
+    {% endfor %}
+
+    {% for script in scripts %}
+        <script src="{{ script.path }}" type="{{ script.type }}"></script>
+    {% endfor %}
+</head>
+
+<body ng-controller='AppCtrl'>
+
+<div ng-include src="'partials/header.tpl.html'"></div>
+
+<div ng-include src="'partials/hero.tpl.html'"></div>
+
+<div ng-include src="'partials/dashboard.tpl.html'"></div>
+
+<div ng-include src="'partials/footer.tpl.html'"></div>
+
+</body>
+</html>
